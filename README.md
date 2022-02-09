@@ -1,14 +1,14 @@
 You are going to deliver a Spring Boot 2.4.x project, which is going to have a complete REST web service CRUD in order to access a Client resource, covering the five basic operations learned in the first course session:
 
-Pageable resource search;
+- Pageable resource search;
 
-Resource search by id;
+- Resource search by id;
 
-Insert a new resource;
+- Insert a new resource;
 
-Update the resource;
+- Update the resource;
 
-Delete a resource;
+- Delete a resource;
 
 
 The project must have a testing environment configured, which is going to access a in-memory database (H2). The project should use Maven as a dependency manager and Java 11 as language.
