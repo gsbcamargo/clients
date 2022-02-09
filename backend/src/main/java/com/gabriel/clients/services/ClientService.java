@@ -2,7 +2,10 @@ package com.gabriel.clients.services;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -11,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.gabriel.clients.dtos.ClientDto;
 import com.gabriel.clients.entities.Client;
 import com.gabriel.clients.repositories.ClientRepository;
+import com.gabriel.clients.services.exceptions.DatabaseException;
 import com.gabriel.clients.services.exceptions.ResourceNotFoundException;
 
 @Service
@@ -39,6 +43,21 @@ public class ClientService {
 		toDto(dto, entity);
 		entity = clientRepository.save(entity);
 		return new ClientDto(entity);
+	}
+	
+	public ClientDto update(Long id, ClientDto dto) {
+		try {
+			Client entity = clientRepository.getById(id);
+			toDto(dto, entity);
+			entity = clientRepository.save(entity);
+			return new ClientDto(entity);
+		}
+		catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException("Sorry, entity of id %s was not found.\", id");
+		}
+		catch (DataIntegrityViolationException e) {
+			throw new DatabaseException("Integrity violation.");
+		}
 	}
 
 	private void toDto(ClientDto dto, Client entity) {
