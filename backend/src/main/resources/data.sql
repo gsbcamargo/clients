@@ -8,3 +8,6 @@ INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Alan Ma
 INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Alonzo Church', 1234567897, 92300.50, TIMESTAMP WITH TIME ZONE '1903-06-14T20:50:07.12345Z', 3);
 INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Dave Thomas', 1234567898, 131300.50, TIMESTAMP WITH TIME ZONE '1956-08-12T20:50:07.12345Z', 0);
 INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Gabriel Camargo', 1234567899, 11300.75, TIMESTAMP WITH TIME ZONE '1992-10-13T20:50:07.12345Z', 0);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Joshua J Bloch', 1234567810, 123456.78, TIMESTAMP WITH TIME ZONE '1961-08-28T20:50:07.12345Z', 1);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Harold Abelson', 1234567811, 321321.78, TIMESTAMP WITH TIME ZONE '1947-04-26T20:50:07.12345Z', 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Gerald Jay Sussman', 1234567812, 88888.88, TIMESTAMP WITH TIME ZONE '1947-02-08T20:50:07.12345Z', 2);
