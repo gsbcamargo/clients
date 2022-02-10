@@ -46,6 +46,7 @@ public class ClientService {
 		return new ClientDto(entity);
 	}
 
+	@Transactional
 	public ClientDto update(Long id, ClientDto dto) {
 		try {
 			Client entity = clientRepository.getById(id);
